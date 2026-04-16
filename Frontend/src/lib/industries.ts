@@ -1,0 +1,18 @@
+export const INDUSTRIES = [
+  'ADAS',
+  'Retail',
+  'Geo Spatial',
+  'Mapping',
+  'Medical AI',
+  'Voice AI',
+  'Manufacturing',
+  'Agriculture',
+  'Social Media',
+  'Asset Management',
+  'Fintech',
+  'RPA',
+  'Physical AI',
+  'E-Commerce and Content',
+  'Insurance',
+  'Sports & Media',
+]

@@ -1,0 +1,59 @@
+
+services:
+  directus:
+    image: directus/directus:11.17.1
+
+    ports:
+      - "8055:8055"
+
+    volumes:
+      # Persist the database file on your local machine
+      - ./database:/directus/database
+
+      # Persist uploaded files on your local machine
+      - ./uploads:/directus/uploads
+
+      # Mount a local extensions folder (optional)
+      # - ./extensions:/directus/extensions
+
+    environment:
+      SECRET: "directus-secret-key-123456"
+      KEY: "directus-key-123456"
+
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/data.db"
+
+      ADMIN_EMAIL: "admin@gmail.com"
+      ADMIN_PASSWORD: "Admin@123"
+
+      WEBSOCKETS_ENABLED: "true"
+      WEBSOCKETS_REST_AUTH: "public"
+      WEBSOCKETS_REST_AUTH_TIMEOUT: "10"
+
+      # Public URL (for email links)
+      PUBLIC_URL: "http://localhost:8055"
+
+      # CORS Configuration
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "true"
+      CORS_METHODS: "GET,POST,PATCH,DELETE,PUT,OPTIONS"
+      CORS_ALLOWED_HEADERS: "Content-Type,Authorization"
+
+      # Email Configuration - Ethereal SMTP (for testing)
+      EMAIL_FROM: "verla38@ethereal.email"
+      EMAIL_TRANSPORT: "smtp"
+      EMAIL_SMTP_HOST: "smtp.ethereal.email"
+      EMAIL_SMTP_PORT: "587"
+      EMAIL_SMTP_SECURE: "false"
+      EMAIL_SMTP_USER: "verla38@ethereal.email"
+      EMAIL_SMTP_PASSWORD: "Pgvv1cx6FqCR7X3xen"
+
+      # Password Reset Configuration
+      PASSWORD_RESET_URL: "http://localhost:8080/reset-password?token={token}"
+
+      # Token Expiry Configuration (15 minutes access, 7 days refresh)
+      ACCESS_TOKEN_TTL: "150m"
+      REFRESH_TOKEN_TTL: "7d"
+networks:
+  default:
+    driver: bridge

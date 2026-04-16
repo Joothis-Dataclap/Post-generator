@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+.pnpm-lock.yaml
+
+# Logs
+*.log
+logs/
+
+# Qdrant data
+backend/storage/qdrant_data/**
+!backend/storage/qdrant_data/.gitkeep
+
+
