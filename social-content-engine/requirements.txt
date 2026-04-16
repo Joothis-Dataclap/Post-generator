@@ -1,0 +1,39 @@
+# ── Web framework ────────────────────────────────────────────
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# ── Data validation & config ─────────────────────────────────
+pydantic[email]==2.10.3
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+
+# ── Database ─────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.36
+aiosqlite==0.20.0
+
+# ── AI / LLM ────────────────────────────────────────────────
+anthropic==0.40.0
+openai==1.57.0
+google-genai==1.1.0
+
+# ── Embeddings & vector store ────────────────────────────────
+sentence-transformers==3.3.1
+qdrant-client==1.12.1
+langchain-text-splitters==0.3.3
+
+# ── Document parsing ────────────────────────────────────────
+python-docx==1.1.2
+pypdf2==3.0.1
+markdown==3.7
+beautifulsoup4==4.12.3
+
+# ── HTTP / async / resilience ────────────────────────────────
+httpx==0.28.1
+tenacity==9.0.0
+
+# ── Image handling ───────────────────────────────────────────
+pillow==11.0.0
+
+# ── Logging ──────────────────────────────────────────────────
+structlog==24.4.0
